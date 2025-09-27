@@ -1,6 +1,6 @@
-# 📌 Projet Mobile et API - React Native + Node.js/Express + Sequelize
+## 📌 Projet Mobile et API - React Native + Node.js/Express + Sequelize
 
-## 🚀 Description
+### 🚀 Description
 
 Ce projet est composé de deux parties :
 
@@ -9,7 +9,7 @@ Ce projet est composé de deux parties :
 
 ---
 
-## 📂 Structure du projet
+### 📂 Structure du projet
 
 ```
 /frontend     → Code de l’application mobile (React Native)
@@ -18,7 +18,7 @@ Ce projet est composé de deux parties :
 
 ---
 
-## ⚙️ Prérequis
+### ⚙️ Prérequis
 
 Assurez-vous d’avoir installé :
 
@@ -29,25 +29,25 @@ Assurez-vous d’avoir installé :
 
 ---
 
-## 🔧 Installation
+### 🔧 Installation
 
-### 1️⃣ Cloner le projet
+#### 1️⃣ Cloner le projet
 
 ```bash
 git clone https://github.com/username/shoply-app.git
 cd shoply-app
 ```
 
-### 2️⃣ Installation des dépendances
+#### 2️⃣ Installation des dépendances
 
-#### Backend
+##### Backend
 
 ```bash
 cd backend
 npm install
 ```
 
-#### Frontend
+##### Frontend
 
 ```bash
 cd ../frontend
@@ -56,9 +56,9 @@ npm install
 
 ---
 
-## ⚡ Configuration
+### ⚡ Configuration
 
-### Backend
+#### Backend
 
 1. Créez un fichier `.env` dans `/backend` avec vos variables d’environnement :
 
@@ -79,9 +79,9 @@ npm install
 
 ---
 
-## ▶️ Lancer le projet
+### ▶️ Lancer le projet
 
-### Backend
+#### Backend
 
 ```bash
 cd backend
@@ -90,7 +90,7 @@ npm run dev
 
 Le serveur sera accessible sur : `http://localhost:5000`
 
-### Frontend
+#### Frontend
 
 ```bash
 cd frontend
@@ -101,7 +101,7 @@ Puis scanner le QR Code avec l’application **Expo Go** (Android/iOS).
 
 ---
 
-## 📡 API Endpoints (exemple)
+### 📡 API Endpoints (exemple)
 
 * `POST /api/auth/login` → Connexion utilisateur
 * `GET /api/users` → Liste des utilisateurs
@@ -109,14 +109,14 @@ Puis scanner le QR Code avec l’application **Expo Go** (Android/iOS).
 
 ---
 
-## ✅ Scripts utiles
+### ✅ Scripts utiles
 
-### Backend
+#### Backend
 
 * `npm run dev` → Lancer le serveur en mode développement
 * `npm run start` → Lancer en production
 
-### Frontend
+#### Frontend
 
 * `npx expo start` → Démarrer le projet React Native
 * `npm run android` → Lancer sur un émulateur Android
@@ -124,13 +124,13 @@ Puis scanner le QR Code avec l’application **Expo Go** (Android/iOS).
 
 ---
 
-## 👨‍💻 Contributeurs
+### 👨‍💻 Contributeurs
 
 * **Valisoa** – Développeur Backend
 * **Mirado** – Développeur Frontend
 
 ---
 
-## 📜 Licence
+### 📜 Licence
 
 Ce projet est sous licence MIT.
