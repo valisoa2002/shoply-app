@@ -10,7 +10,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      name: {
+      nom: {
         type: Sequelize.STRING(100),
         allowNull: false,
       },
@@ -22,11 +22,11 @@ module.exports = {
         type: Sequelize.STRING(50),
         allowNull: false,
       },
-      phoneNumber: {
+      phone: {
         type: Sequelize.STRING(20),
         allowNull: false,
       },
-      delivery_address: {
+      adresse_livraison: {
         type: Sequelize.STRING(100), // Adresse de client par défaut
         allowNull: false,
       },

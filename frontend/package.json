@@ -1,6 +1,7 @@
 {
-  "name": "shoply",
+  "name": "Shoply",
   "main": "expo-router/entry",
+  "icon": "./assets/images/icon.png",
   "version": "1.0.0",
   "scripts": {
     "start": "expo start",

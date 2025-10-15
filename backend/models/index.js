@@ -1,44 +1,34 @@
 const User = require("./User");
-const Commande = require("./Commande");
-const DetailCommande = require("./DetailCommande");
-const Product = require("./Product");
+const Produit = require("./Produit");
+const RequeteClient = require("./RequeteClient");
+const EntiteNER = require("./NER_Entity");
+const Marque = require("./Marque");
+const Categorie = require("./Categorie");
+const Vendeur = require("./Vendeur");
 
-User.hasMany(Commande, {
-  foreignKey: "Z",
-  as: "commandes",
-  onDelete: "CASCADE",
+Produit.belongsTo(Marque, {
+  foreignKey: "marque_id",
+  as: "marque",
 });
 
-Commande.belongsTo(User, {
-  foreignKey: "userId",
-  as: "user",
+Produit.belongsTo(Vendeur, {
+  foreignKey: "vendeur_id",
+  as: "vendeur",
 });
 
-DetailCommande.hasMany(Commande, {
-  foreignKey: "commandeId",
-  as: "commandes",
-  onDelete: "CASCADE",
+Produit.belongsTo(Categorie, {
+  foreignKey: "categorie_id",
+  as: "categorie",
 });
 
-Commande.belongsTo(DetailCommande, {
-  foreignKey: "commandeId",
-  as: "detail",
-});
-
-DetailCommande.hasMany(Product, {
-  foreignKey: "productId",
-  as: "products",
-  onDelete: "CASCADE",
-});
-
-Product.belongsTo(DetailCommande, {
-  foreignKey: "productId",
-  as: "detail",
+RequeteClient.hasMany(EntiteNER, {
+  foreignKey: "requete_id",
+  as: "entites",
 });
 
 module.exports = {
   User,
-  Commande,
-  Product,
-  DetailCommande,
+  Produit,
+  Categorie,
+  Marque,
 };

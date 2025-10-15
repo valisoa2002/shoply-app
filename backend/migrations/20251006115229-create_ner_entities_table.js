@@ -3,54 +3,52 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("produits", {
+    await queryInterface.createTable("ner_entities", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      nom: {
-        type: Sequelize.STRING(80),
+      type: {
+        type: Sequelize.ENUM([
+          "CATEGORIE",
+          "BUDGET",
+          "PRODUIT",
+          "CARACTERISTIQUE",
+          "ETAT",
+          "COULEUR",
+          "USAGE",
+          "TAILLE",
+          "VENDEUR",
+          "MARQUE",
+        ]),
         allowNull: false,
       },
-      description: {
-        type: Sequelize.TEXT(),
-        allowNull: true,
-      },
-      prix: {
-        type: Sequelize.INTEGER,
+      valeur: {
+        type: Sequelize.STRING,
         allowNull: false,
       },
-      etat: {
-        type: Sequelize.STRING(50),
-        allowNull: true,
-      },
-      vendeur_id: {
+      requete_id: {
         // Lien direct au produit plutôt qu'au vendeur
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      marque_id: {
-        // Lien direct au produit plutôt qu'à la marqur
+      position_debut: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      categorie_id: {
-        // Lien direct au produit plutôt qu'à la catgorie
+      position_debut: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      image_url: {
-        type: Sequelize.STRING(100), // Image qui représente le produit
-        allowNull: false,
-      },
+
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE,
     });
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("produits");
+    await queryInterface.dropTable("ner_entities");
   },
 };

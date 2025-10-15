@@ -1,30 +1,27 @@
 const { Sequelize } = require("sequelize");
 const sequelize = require("../database/connection");
-module.exports = sequelize.define("User", {
+module.exports = sequelize.define("Marque", {
   id: {
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
     type: Sequelize.INTEGER,
   },
-  nom: {
-    type: Sequelize.STRING,
+  type: {
+    type: Sequelize.ENUM(["COULEUR", "TAILLE", "USAGE", "CARACTERISTIQUE"]),
     allowNull: false,
   },
-  email: {
-    type: Sequelize.STRING,
+  produit_id: {
+    // Lien direct au produit plutôt qu'au vendeur
+    type: Sequelize.INTEGER,
     allowNull: false,
+    references: {
+      model: "Produit",
+      key: "id",
+    },
   },
-  password: {
+  valeur: {
     type: Sequelize.STRING,
-    allowNull: false,
-  },
-  phone: {
-    type: Sequelize.STRING,
-    allowNull: false,
-  },
-  adresse_livraison: {
-    type: Sequelize.STRING, // Adresse de client par défaut
     allowNull: false,
   },
   createdAt: Sequelize.DATE,

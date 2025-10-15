@@ -1,25 +1,16 @@
+// import { Link } from "expo-router";
 import React, { Component } from "react";
-import { Text, StyleSheet, View, TouchableOpacity } from "react-native";
+import { Platform, Text, View } from "react-native";
+// import { Appbar, Button } from "react-native-paper";
 
-export default class index extends Component {
+// const MORE_ICON = Platform.OS === "ios" ? "dots-horizontal" : "dots-vertical";
+
+export default class index {
   render() {
     return (
-      <View className="flex justify-center items-center">
-        <TouchableOpacity style={styles.btn}>
-          <Text style={styles.btnText}> Hello World!! </Text>
-        </TouchableOpacity>
+      <View>
+        <Text>Helo!!</Text>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  btn: {
-    backgroundColor: "red",
-    padding: 10,
-  },
-  btnText: {
-    color: "white",
-    fontWeight: "semibold",
-  },
-});

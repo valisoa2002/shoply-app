@@ -1,14 +1,14 @@
 const { Sequelize } = require("sequelize");
 const sequelize = require("../database/connection");
 
-module.exports = sequelize.define("Product", {
+module.exports = sequelize.define("Produit", {
   id: {
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
     type: Sequelize.INTEGER,
   },
-  name: {
+  nom: {
     type: Sequelize.STRING,
     allowNull: false,
   },
@@ -16,17 +16,40 @@ module.exports = sequelize.define("Product", {
     type: Sequelize.TEXT,
     allowNull: true,
   },
-  price: {
+  prix: {
     type: Sequelize.INTEGER,
     allowNull: false,
   },
-  phoneNumber: {
+  etat: {
     type: Sequelize.STRING,
-    allowNull: false,
+    allowNull: true,
   },
-  stock: {
-    type: Sequelize.INTEGER, // Quantité sisponible en stock
+  vendeur_id: {
+    // Lien direct au produit plutôt qu'au vendeur
+    type: Sequelize.INTEGER,
     allowNull: false,
+    references: {
+      model: "Vendeur",
+      key: "id",
+    },
+  },
+  marque_id: {
+    // Lien direct au produit plutôt qu'à la marqur
+    type: Sequelize.INTEGER,
+    allowNull: false,
+    references: {
+      model: "Marque",
+      key: "id",
+    },
+  },
+  categorie_id: {
+    // Lien direct au produit plutôt qu'à la catgorie
+    type: Sequelize.INTEGER,
+    allowNull: false,
+    references: {
+      model: "Categorie",
+      key: "id",
+    },
   },
   image_url: {
     type: Sequelize.STRING, // Image qui représente le produit

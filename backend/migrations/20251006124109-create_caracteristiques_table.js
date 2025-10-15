@@ -3,33 +3,25 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("commandes", {
+    await queryInterface.createTable("caracteristiques", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      date_commande: {
-        type: Sequelize.DATE,
+      type: {
+        type: Sequelize.ENUM(["COULEUR", "TAILLE", "USAGE", "CARACTERISTIQUE"]),
         allowNull: false,
       },
-      status: {
-        type: Sequelize.BOOLEAN,
-        defaultValue: 0,
-        allowNull: false,
-      },
-      montant_total: {
+      produit_id: {
+        // Lien direct au produit plutôt qu'au vendeur
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      delivery_address: {
-        type: Sequelize.STRING(100), // Adresse de livraison pour cette commande
+      valeur: {
+        type: Sequelize.STRING(100),
         allowNull: false,
-      },
-      userId: {
-        type: Sequelize.INTEGER,
-        primaryKey: true,
       },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE,
@@ -37,6 +29,6 @@ module.exports = {
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("commandes");
+    await queryInterface.dropTable("caracteristiques");
   },
 };
